@@ -58,7 +58,7 @@ class BabyWarehouse implements BabyWarehouseInterface
             $activities = $result['activity'];
         }
 
-        return array_slice($activities, 0, 10);
+        return $activities;
     }
 
     /**
@@ -90,7 +90,7 @@ class BabyWarehouse implements BabyWarehouseInterface
             $goods = $result['data'];
         }
 
-        return array_slice($goods, 0, 10);
+        return $goods;
     }
 
     /**

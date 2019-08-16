@@ -50,7 +50,7 @@
             "database/factories"
         ],
         "files": [
-            "/www/wwwroot/warehouse/app/Helpers/function.php"
+            "app/Helpers/functions.php"
         ]
     },
     "autoload-dev": {
