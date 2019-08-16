@@ -6,3 +6,10 @@ export function getActivityList(params) {
         params: params
     })
 }
+
+export function getGoodsList(params) {
+    return request({
+        url: '/api/goods',
+        params: params
+    })
+}

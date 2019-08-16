@@ -27,6 +27,7 @@ $api->version('v1', function ($api) {
     ], function($api) {
 
         $api->get('activity', 'ActivityController@index');
+        $api->get('goods', 'ActivityController@goods');
     });
 
 });

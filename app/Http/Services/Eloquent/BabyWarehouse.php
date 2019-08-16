@@ -58,7 +58,39 @@ class BabyWarehouse implements BabyWarehouseInterface
             $activities = $result['activity'];
         }
 
-        return $activities;
+        return array_slice($activities, 0, 10);
+    }
+
+    /**
+     * 获取商品列表.
+     *
+     * @param $activityID
+     * @return array
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     */
+    public function getGoodsList($activityID)
+    {
+        $client = $this->getClient();
+
+        $param = $this->setBaseParam();
+
+        $param['activityIds'] = $activityID;
+
+        $this->setSign($param);
+
+        $response = $client->request('POST', '/v2/api/activity/item/list', [
+            'json' => ['data' => $param]
+        ]);
+
+        $body = $response->getBody()->getContents();
+
+        $result = json_decode($body, true);
+
+        if ($result['code'] == 'SUCCESS') {
+            $goods = $result['data'];
+        }
+
+        return array_slice($goods, 0, 10);
     }
 
     /**

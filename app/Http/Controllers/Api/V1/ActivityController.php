@@ -10,6 +10,7 @@ namespace App\Http\Controllers\Api\V1;
 
 use App\Http\Controllers\Controller;
 use App\Http\Services\Interfaces\BabyWarehouseInterface;
+use Illuminate\Http\Request;
 
 /**
  * Class ActivityController
@@ -38,6 +39,22 @@ class ActivityController extends Controller
      */
     public function index()
     {
-        return response()->json(resp_format($this->babyWarehouse->getActivityList()));
+        return response()->json(
+            resp_format($this->babyWarehouse->getActivityList())
+        );
+    }
+
+    /**
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function goods(Request $request)
+    {
+        $activityID = $request->input('activityID');
+
+        return response()
+            ->json(
+                resp_format($this->babyWarehouse->getGoodsList($activityID))
+            );
     }
 }
