@@ -15,7 +15,7 @@ use Illuminate\Support\ServiceProvider;
 /**
  * Class CustomServiceProvider
  *
- * @package App\Providers
+ * @package App\Provider
  */
 class CustomServiceProvider extends ServiceProvider
 {

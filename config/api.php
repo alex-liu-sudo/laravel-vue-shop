@@ -159,7 +159,7 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Authentication Providers
+    | Authentication Provider
     |--------------------------------------------------------------------------
     |
     | The authentication providers that should be used when attempting to

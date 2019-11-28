@@ -57,6 +57,7 @@ class BabyWarehouse implements BabyWarehouseInterface
         if ($result['code'] == 'SUCCESS') {
             $activities = $result['activity'];
         }
+//        throw new \InvalidArgumentException('抛出测试异常', 10);
 
         return $activities;
     }
@@ -136,5 +137,10 @@ class BabyWarehouse implements BabyWarehouseInterface
             'timeout' => 30,
             'base_uri' => 'https://gw.baobeicang.com/'
         ]);
+    }
+
+    public static function __callStatic($method, $args)
+    {
+        dd($method);
     }
 }

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Services\Interfaces\BabyWarehouseInterface;
-use Illuminate\Http\Request;
+use Alex\ShortLink\Client;
 
 class HomeController extends Controller
 {
@@ -24,9 +24,15 @@ class HomeController extends Controller
 
     /**
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @throws \Exception
      */
     public function index()
     {
+
+//        $client = new Client();
+//
+//        $shortUrl = $client->getShortUrl('http://www.baidu.com');
+
         return view('app');
     }
 }
